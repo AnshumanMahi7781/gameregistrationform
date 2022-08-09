@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Registration Form | Register Yourself Here</title>
+    <link rel="stylesheet" href="./StyleSheet.css" />
+    <link rel="stylesheet" href="./MediaQuery.css">
+    <script src="./JavaScript.js"></script>
+  </head>
+  <body>
+    <h2>Gaming Tournament Registration Form</h2>
+    <h4 id="ErrorSection">Here we show the errors</h4>
+     <div id="FormContainer">
+      <div id="ApplicationType">
+        <h3>Select Application Type:</h3>
+        <div>
+          <input type="radio" name="ApplicationType"id="IndividualApplication" onclick="DisplayOrHideForm2()"  checked/>
+          <label for="IndividualApplication">Individual Application</label>
+        </div>
+        <div>
+          <input type="radio" name="ApplicationType" id="TeamApplication" onclick="DisplayOrHideForm1()"/>
+          <label for="TeamApplication">Team Application</label>
+        </div>
+      </div> 
+      <!-- Individual form Section -->
+      <div id="IndividualFormcontainer">
+        <form  name="IndividualForm" onsubmit="return false">
+            <div id="NameSection">
+                <h3>Player Name<strong>*</strong></h3>
+                <div>
+                  <label for="PFname">First Name</label>
+                  <input type="text"name="Pfname" id="PFname" onkeypress="HideErrorSection()" />
+                </div>
+                <div>
+                  <label for="PLname">Last Name</label>
+                  <input type="text" id="PLname" onkeypress="HideErrorSection()" />
+                </div>
+              </div> 
+              <div id="EmailSection">
+                <div>
+                  <label for="EmailAddress">Email Address<strong>*</strong></label>
+                  <input type="email" name="Emailid" id="EmailAddress" onkeypress="HideErrorSection()" />
+                </div>
+              </div>
+              <div id="gameSection">
+                <div>
+                   <h3>Select Games Here:</h3>
+                </div>
+                <select name="Games" id="GameName" multiple >
+                  <option value="Pubg">PUBG</option>
+                  <option value="FreeFire">FreeFire</option>
+                  <option value="Valorent">Valorent</option>
+                  <option value="Cod">Call Of Duty</option>
+                </select>
+                <p>Hold ctrl to select more than one game</p>
+              </div>
+              <div id="buttonSection">
+                <button onclick="EmptyFieldCheck()""> Register</button>
+              </div>
+        </form>
+      </div>
+      <!-- Individual form Section End  -->
+
+      <!-- Team Form Section -->
+      <div id="TeamFormContainer">
+        <form  name="TeamForm" onsubmit="return false">
+          <div class="TeamNameSection">
+            <label for="TeamName">Team Name</label>
+            <input type="text" id="TeamName" onkeypress="HideErrorSection()">
+          </div>
+          <div id="NameSection">
+            <h3>Team Coach<strong>*</strong></h3>
+            <div>
+              <label for="CFname">First Name</label>
+              <input type="text"id="CFname" onkeypress="HideErrorSection()" />
+            </div>
+            <div>
+              <label for="CLname">Last Name</label>
+              <input type="text" id="CLname" onkeypress="HideErrorSection()" />
+            </div>
+          </div>
+          <div id="LogoSection">
+            <label for="TeamLogo">Team Logo</label>
+            <input type="file" name="" id="TeamLogo">
+          </div>
+          <div class="PlayerNameSection">
+            <h3>Player Information<strong>*</strong></h3>
+                <div>
+                  <label for="PlayerFname">Full Name</label>
+                  <input type="text"name="Playerfname" id="PlayerFname" onkeypress="HideErrorSection()" />
+                </div>
+                <div>
+                  <label for="pEmailAddress">Email Address</label>
+                  <input type="text" name="PlayerEmailid" id="PEmailAddress" onkeypress="HideErrorSection()" />
+                </div>
+                <div class="SaveButtonSection">
+                  <button onclick="EmailValidation() ,PrintTeamPlayerName()" type="button">Save</button>
+                </div>
+            </div>
+            <div id="ShowPlayer">
+              <h3>Player Name and Email Address</h3> 
+              <div id="ShowDetails">
+
+              </div>   
+            </div>
+            <div id="gameSection">
+              <div>
+                 <h3>Select Games Here:</h3>
+              </div>
+              <select name="Games" id="GameName2" multiple >
+                <option value="Pubg">PUBG</option>
+                <option value="FreeFire">FreeFire</option>
+                <option value="Valorent">Valorent</option>
+                <option value="Cod">Call Of Duty</option>
+              </select>
+              <p>Hold ctrl to select more than one game</p>
+            </div>
+            <div id="buttonSection">
+              <button onclick="EmptyTeamFieldCheck()"> Register</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
